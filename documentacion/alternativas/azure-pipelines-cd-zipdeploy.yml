@@ -1,0 +1,105 @@
+# =============================================================================
+# Ponderix · PLAN B de CD (solo si NO se puede crear la Service Connection de
+# Azure Resource Manager; ver documentacion/05-solucion-errores.md, CD-02).
+#
+# Igual que la CD principal (recurso de pipeline "ci", artefacto "webapp",
+# prueba de humo), pero despliega con la API de "zip deploy" de Kudu usando las
+# credenciales de publicación del App Service.
+#
+# Requisitos (en Azure y Azure DevOps, NUNCA en el repositorio):
+#   1. App Service → Configuration → General settings →
+#      "SCM Basic Auth Publishing Credentials": On → Save.
+#   2. App Service → Overview → "Download publish profile". Del XML solo se
+#      necesitan userName y userPWD del perfil "ZipDeploy"/"MSDeploy".
+#      Borrar el archivo descargado después de copiar los valores.
+#   3. Azure DevOps → pipeline ponderix-cd → Edit → Variables → New variable:
+#        zipDeployUser     = <userName>           (p. ej. $ponderix-equipo7)
+#        zipDeployPassword = <userPWD>            ✔ "Keep this value secret"
+#   4. Copiar este archivo a pipelines/azure-pipelines-cd.yml mediante un PR
+#      y ajustar webAppName.
+#
+# Es menos seguro que la federación de identidad (hay una contraseña de larga
+# duración). Rotarla al terminar: Overview → "Reset publish profile".
+# =============================================================================
+
+trigger: none
+pr: none
+
+resources:
+  pipelines:
+    - pipeline: ci
+      source: ponderix-ci          # [CONFIGURAR] nombre exacto de la pipeline de CI
+      trigger:
+        branches:
+          include:
+            - main
+
+variables:
+  webAppName: 'ponderix-CAMBIAR'   # [CONFIGURAR] nombre del App Service
+  environmentName: ponderix-produccion
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: Desplegar
+    displayName: 'Desplegar en Azure App Service (zip deploy)'
+    jobs:
+      - deployment: DesplegarWebApp
+        displayName: 'Desplegar artefacto de CI'
+        environment: ${{ variables.environmentName }}
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - download: ci
+                  artifact: webapp
+                  displayName: 'Descargar artefacto "webapp" de la ejecución de CI'
+
+                - bash: |
+                    set -euo pipefail
+                    echo "##vso[build.updatebuildnumber]CD de CI $CI_RUN_NAME"
+                    echo "##[section]Ejecución de CI: $CI_RUN_NAME · commit $CI_COMMIT"
+                    ls -la "$PIPELINE_WORKSPACE/ci/webapp"
+                  displayName: 'Trazabilidad: ejecución de CI y commit recibidos'
+                  env:
+                    CI_RUN_NAME: $(resources.pipeline.ci.runName)
+                    CI_COMMIT: $(resources.pipeline.ci.sourceCommit)
+
+                - bash: |
+                    set -euo pipefail
+                    ZIP=`ls "$PIPELINE_WORKSPACE"/ci/webapp/*.zip | head -1`
+                    echo "Desplegando $ZIP en $WEBAPP_NAME"
+                    CODIGO=`curl -sS -o respuesta.txt -w "%{http_code}" -X POST \
+                      -u "$ZD_USER:$ZD_PASSWORD" \
+                      --data-binary @"$ZIP" \
+                      "https://$WEBAPP_NAME.scm.azurewebsites.net/api/zipdeploy?isAsync=false"`
+                    cat respuesta.txt || true
+                    if [ "$CODIGO" != "200" ] && [ "$CODIGO" != "202" ]; then
+                      echo "##vso[task.logissue type=error]zip deploy respondió HTTP $CODIGO"
+                      exit 1
+                    fi
+                  displayName: 'Desplegar .zip con zip deploy'
+                  env:
+                    WEBAPP_NAME: $(webAppName)
+                    ZD_USER: $(zipDeployUser)
+                    ZD_PASSWORD: $(zipDeployPassword)   # variable secreta: Azure DevOps la oculta en los logs
+
+                - bash: |
+                    set -euo pipefail
+                    URL="https://$WEBAPP_NAME.azurewebsites.net"
+                    for intento in {1..30}; do
+                      COMMIT=`curl -fsS --max-time 20 "$URL/api/version" | jq -r '.commit // empty' || true`
+                      if [ "$COMMIT" = "$COMMIT_ESPERADO" ] && [ "`curl -fsS --max-time 20 "$URL/health" || true`" = "Healthy" ]; then
+                        echo "##[section]Prueba de humo superada en el intento $intento ($URL)"
+                        exit 0
+                      fi
+                      echo "Intento $intento: commit publicado '$COMMIT'; esperando…"
+                      sleep 10
+                    done
+                    echo "##vso[task.logissue type=error]La aplicación no publicó el commit $COMMIT_ESPERADO."
+                    exit 1
+                  displayName: 'Prueba de humo: /health y commit publicado'
+                  env:
+                    WEBAPP_NAME: $(webAppName)
+                    COMMIT_ESPERADO: $(resources.pipeline.ci.sourceCommit)

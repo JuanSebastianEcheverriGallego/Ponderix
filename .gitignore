@@ -1,0 +1,5 @@
+_ensamblado/
+bin/
+obj/
+TestResults/
+*.zip

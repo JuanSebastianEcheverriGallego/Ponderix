@@ -1,0 +1,7 @@
+# Finales de línea LF (los scripts bash fallan con CRLF); PowerShell en CRLF.
+* text=auto eol=lf
+*.{ps1,cmd,bat} text eol=crlf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.zip binary
