@@ -97,7 +97,7 @@ Leyenda de responsables: **J** Juan Sebastián · **D** David · **Jh** Jhon · 
 | | |
 |---|---|
 | **Responsable** | M (en paralelo desde el dom 15) |
-| **Acciones** | `scripts/crear-recursos-azure.sh ponderix-<sufijo> eastus2 F1` (o portal): RG `rg-ponderix`, plan Linux `asp-ponderix`, Web App .NET 10, comando de inicio, HTTPS Only, TLS 1.2, FTP deshabilitado, health check `/health`, **sin** «Continuous deployment» del portal |
+| **Acciones** | `scripts/crear-recursos-azure.sh ponderix-<sufijo> brazilsouth F1` (o portal): RG `rg-ponderix`, plan Linux `asp-ponderix`, Web App .NET 10, comando de inicio, HTTPS Only, TLS 1.2, FTP deshabilitado, health check `/health`, **sin** «Continuous deployment» del portal |
 | **Resultado esperado** | La URL muestra la página por defecto de App Service |
 | **Evidencia** | `03-cd/01`, `02` |
 | **Condición para avanzar** | Web App en estado *Running* |

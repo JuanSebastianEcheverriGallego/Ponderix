@@ -5,9 +5,13 @@
 #
 # Uso:
 #   az login
-#   ./scripts/crear-recursos-azure.sh <nombre-app-unico> [region] [sku]
+#   ./scripts/crear-recursos-azure.sh <nombre-app-unico> [region] [sku] [grupo-recursos] [plan]
 # Ejemplo:
-#   ./scripts/crear-recursos-azure.sh ponderix-equipo7 eastus2 F1
+#   ./scripts/crear-recursos-azure.sh ponderix-equipo7 brazilsouth F1
+#
+# Azure for Students suele limitar las regiones (p. ej. brazilsouth, canadacentral,
+# chilecentral, francecentral, spaincentral). Consultar:
+#   az policy assignment list --query "[?displayName=='Allowed resource deployment regions'].parameters"
 #
 # No guarda ni imprime credenciales. Es idempotente: si los recursos ya existen,
 # az los actualiza o informa que existen.
@@ -15,10 +19,10 @@
 set -euo pipefail
 
 APP_NAME="${1:?Indique el nombre del App Service (único en todo Azure), p. ej. ponderix-equipo7}"
-LOCATION="${2:-eastus2}"
+LOCATION="${2:-brazilsouth}"
 SKU="${3:-F1}"
-RESOURCE_GROUP="rg-ponderix"
-PLAN="asp-ponderix"
+RESOURCE_GROUP="${4:-rg-ponderix}"
+PLAN="${5:-asp-ponderix}"
 RUNTIME="DOTNETCORE:10.0"
 
 echo "Suscripción activa:"

@@ -25,19 +25,19 @@ No necesitas la CI para preparar Azure. Hazlo cuanto antes: los problemas de sus
 ```bash
 az login
 # Elige un nombre ÚNICO en todo Azure (minúsculas, números y guiones). Ejemplo: ponderix-equipo7
-./scripts/crear-recursos-azure.sh ponderix-<sufijo> eastus2 F1        # Git Bash / Linux / macOS
+./scripts/crear-recursos-azure.sh ponderix-<sufijo> brazilsouth F1        # Git Bash / Linux / macOS
 # PowerShell:
-# .\scripts\crear-recursos-azure.ps1 -AppName ponderix-<sufijo> -Location eastus2 -Sku F1
+# .\scripts\crear-recursos-azure.ps1 -AppName ponderix-<sufijo> -Location brazilsouth -Sku F1
 ```
 
 (El script está en `paquetes/04-marbel/scripts/` del respaldo; ejecútalo desde ahí o desde tu rama.)
 
-Si la región da error de política o de cuota, prueba otra (`eastus`, `westus2`, `centralus`, `brazilsouth`) — ver CD-04.
+Si la región da error de política o de cuota, prueba otra (otra de las permitidas por la política de la suscripción) — ver CD-04.
 
 **Opción B — portal:**
 
 1. **Create a resource → Web App**.
-2. **Basics:** Suscripción · **Resource group:** *Create new* `rg-ponderix` · **Name:** `ponderix-<sufijo>` · **Publish:** Code · **Runtime stack:** **.NET 10 (LTS)** · **Operating System:** **Linux** · **Region:** p. ej. East US 2 · **Pricing plan:** *Create new* `asp-ponderix` → **Free F1** (o Basic B1 si hay crédito: arranque más rápido y *Always On*).
+2. **Basics:** Suscripción · **Resource group:** *Create new* `rg-ponderix` · **Name:** `ponderix-<sufijo>` · **Publish:** Code · **Runtime stack:** **.NET 10 (LTS)** · **Operating System:** **Linux** · **Region:** p. ej. Brazil South (en Azure for Students solo se permiten algunas regiones: brazilsouth, canadacentral, chilecentral, francecentral, spaincentral; compruébalo con `az policy assignment list`) · **Pricing plan:** *Create new* `asp-ponderix` → **Free F1** (o Basic B1 si hay crédito: arranque más rápido y *Always On*).
 3. **Deployment:** **Continuous deployment: Disable** ⚠️ (si lo activas, Azure crea un workflow de GitHub Actions en el repo, que **no** es nuestra CD). **Basic authentication: Disable**.
 4. **Review + create → Create**.
 5. En la Web App: **Settings → Configuration → General settings**: **Startup Command** `dotnet Ponderix.Api.dll` · **HTTPS Only: On** · **Minimum TLS: 1.2** · **FTP state: Disabled** → **Save**.

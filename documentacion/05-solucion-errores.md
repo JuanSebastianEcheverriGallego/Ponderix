@@ -84,7 +84,7 @@ Formato: **síntoma → causa probable → solución**. Si un error real ocurre,
 
 ### CD-04 · `RequestDisallowedByPolicy`/`RequestDisallowedByAzure` o límite de planes F1 al crear el App Service
 - **Causa:** la suscripción de estudiante solo permite ciertas regiones, o ya existe un plan Free Linux en esa región.
-- **Solución:** probar `eastus`, `eastus2`, `westus2`, `centralus`, `brazilsouth`; reutilizar el plan existente; o usar B1 si hay crédito.
+- **Solución:** consultar las regiones permitidas con `az policy assignment list --query "[?displayName=='Allowed resource deployment regions'].parameters"` (en Azure for Students suelen ser brazilsouth, canadacentral, chilecentral, francecentral, spaincentral). Ojo: una región permitida puede tener cuota F1 = 0 (error «Operation cannot be completed without additional quota»); en ese caso, probar otra región permitida; reutilizar el plan existente; o usar B1 si hay crédito.
 
 ### CD-05 · La URL muestra «Application Error» o HTTP 503 después de desplegar
 - **Causas:** comando de inicio incorrecto (`dotnet Ponderix.Api.dll`), pila distinta de `DOTNETCORE|10.0`, o el zip tenía una carpeta raíz.

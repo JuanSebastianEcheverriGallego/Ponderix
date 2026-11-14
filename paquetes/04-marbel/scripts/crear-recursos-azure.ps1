@@ -4,19 +4,23 @@
 #
 # Uso (PowerShell 7 o Windows PowerShell, con Azure CLI instalado):
 #   az login
-#   .\scripts\crear-recursos-azure.ps1 -AppName ponderix-equipo7 -Location eastus2 -Sku F1
+#   .\scripts\crear-recursos-azure.ps1 -AppName ponderix-equipo7 -Location brazilsouth -Sku F1
+#
+# Azure for Students suele limitar las regiones (p. ej. brazilsouth, canadacentral,
+# chilecentral, francecentral, spaincentral). Consultar:
+#   az policy assignment list --query "[?displayName=='Allowed resource deployment regions'].parameters"
 #
 # No guarda ni imprime credenciales.
 # =============================================================================
 param(
     [Parameter(Mandatory = $true)][string]$AppName,
-    [string]$Location = "eastus2",
-    [string]$Sku = "F1"
+    [string]$Location = "brazilsouth",
+    [string]$Sku = "F1",
+    [string]$ResourceGroup = "rg-ponderix",
+    [string]$Plan = "asp-ponderix"
 )
 
 $ErrorActionPreference = "Stop"
-$ResourceGroup = "rg-ponderix"
-$Plan = "asp-ponderix"
 $Runtime = "DOTNETCORE:10.0"
 
 function Invoke-Az {
