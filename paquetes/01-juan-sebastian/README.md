@@ -101,8 +101,8 @@ flowchart LR
 **Requisitos:** [.NET SDK 10](https://dotnet.microsoft.com/download/dotnet/10.0) y Git. Opcional: VS Code (extensión C# Dev Kit) o Visual Studio 2026.
 
 ```bash
-git clone https://github.com/[PENDIENTE: PROPIETARIO]/ponderix.git
-cd ponderix
+git clone https://github.com/JuanSebastianEcheverriGallego/PonderixOficial.git
+cd PonderixOficial
 dotnet --version            # debe mostrar 10.0.x
 dotnet restore Ponderix.slnx
 dotnet build Ponderix.slnx

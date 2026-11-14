@@ -4,7 +4,7 @@
 
 | Necesidad | Cómo se resuelve sin secretos en el repo |
 |---|---|
-| Azure DevOps lee GitHub | GitHub App *Azure Pipelines* instalada solo en `ponderix` (permisos limitados al repo) |
+| Azure DevOps lee GitHub | GitHub App *Azure Pipelines* instalada solo en `PonderixOficial` (permisos limitados al repo) |
 | Azure DevOps despliega en Azure | Service Connection ARM con **federación de identidad de carga de trabajo** (sin contraseña ni secreto de cliente; tokens de corta duración) y ámbito limitado al grupo `rg-ponderix` |
 | Uso de la conexión y del entorno | Sin «acceso a todas las pipelines»: cada pipeline se autoriza explícitamente (*Permit*) |
 | Configuración de la app | No hay base de datos ni API externas → no hay cadenas de conexión. Si en el futuro las hubiera: *App settings* del App Service (o Key Vault), nunca `appsettings.json` |

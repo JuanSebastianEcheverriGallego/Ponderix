@@ -12,10 +12,10 @@ Leyenda de responsables: **J** Juan Sebastián · **D** David · **Jh** Jhon · 
 |---|---|
 | **Responsable** | J (principal) · todos (respaldo) |
 | **Requisitos previos** | Cuentas de GitHub de los 5; Git y .NET SDK 10 instalados |
-| **Acciones** | 1) Subir el repositorio de respaldo a GitHub como `ponderix-respaldo` (privado, opcional; ver §Respaldo al final). 2) J crea el repo oficial **`ponderix`** vacío y público. 3) Primer commit en `main` (`.gitignore`, `.gitattributes`, README mínimo). |
+| **Acciones** | 1) Subir el repositorio de respaldo a GitHub como `ponderix-respaldo` (privado, opcional; ver §Respaldo al final). 2) J crea el repo oficial **`PonderixOficial`** vacío y público. 3) Primer commit en `main` (`.gitignore`, `.gitattributes`, README mínimo). |
 | **Comandos** | Guía 1 §2–3 |
 | **Archivos** | `.gitignore`, `.gitattributes`, `README.md` |
-| **Resultado esperado** | `https://github.com/JuanSebastianEcheverriGallego/ponderix` con rama `main` |
+| **Resultado esperado** | `https://github.com/JuanSebastianEcheverriGallego/PonderixOficial` con rama `main` |
 | **Evidencia** | `evidencias/01-repositorio/01-repositorio-nombre-y-main.png` |
 | **Condición para avanzar** | La rama por defecto es `main` y el repo tiene nombre distintivo |
 
@@ -189,4 +189,4 @@ git remote add origin https://github.com/<propietario>/ponderix-respaldo.git
 git push -u origin main
 ```
 
-El respaldo **no se entrega** al docente ni sustituye al repo oficial: el trabajo evaluable son los commits y PR de cada integrante en `ponderix`.
+El respaldo **no se entrega** al docente ni sustituye al repo oficial: el trabajo evaluable son los commits y PR de cada integrante en `PonderixOficial`.

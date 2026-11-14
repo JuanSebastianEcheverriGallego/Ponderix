@@ -1,6 +1,6 @@
 # Ponderix · Repositorio de respaldo (material de preparación)
 
-Material completo para que el equipo desarrolle la **Práctica final de Despliegue de Software 2026-2 (CI + CD)**. **Este repositorio no se entrega al docente**: cada integrante toma de aquí su parte y la incorpora al repositorio oficial **`ponderix`** con su propia rama, commits y Pull Request.
+Material completo para que el equipo desarrolle la **Práctica final de Despliegue de Software 2026-2 (CI + CD)**. **Este repositorio no se entrega al docente**: cada integrante toma de aquí su parte y la incorpora al repositorio oficial **`PonderixOficial`** con su propia rama, commits y Pull Request.
 
 | Integrante | Usuario GitHub | Rol | Guía |
 |---|---|---|---|
@@ -46,7 +46,7 @@ Material completo para que el equipo desarrolle la **Práctica final de Desplieg
 
 ## Cómo usar un paquete
 
-Cada `paquetes/0N-*/` reproduce **las rutas del repositorio oficial**. Se copia su contenido sobre la raíz del clon de `ponderix` (en una rama propia), se revisa con `git status` que solo aparecen archivos propios y se hacen los commits que indica la guía. El `README.md` oficial solo lo copia Juan; los demás **editan su sección**.
+Cada `paquetes/0N-*/` reproduce **las rutas del repositorio oficial**. Se copia su contenido sobre la raíz del clon de `PonderixOficial` (en una rama propia), se revisa con `git status` que solo aparecen archivos propios y se hacen los commits que indica la guía. El `README.md` oficial solo lo copia Juan; los demás **editan su sección**.
 
 ## Verificación local del material
 

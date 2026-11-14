@@ -1,10 +1,10 @@
 # 8. Matriz de evidencias
 
-Rutas relativas al repositorio oficial `ponderix`. «Estado» se marca **solo** cuando la evidencia real existe.
+Rutas relativas al repositorio oficial `PonderixOficial`. «Estado» se marca **solo** cuando la evidencia real existe.
 
 | Requisito | Actividad | Evidencia necesaria | Ubicación | Responsable | Cómo se verifica | Estado |
 |---|---|---|---|---|---|---|
-| Repo con nombre distintivo y rama `main` | Común | Página del repo | `evidencias/01-repositorio/01-repositorio-nombre-y-main.png` | Juan | Nombre `ponderix`, rama por defecto `main` | ☐ |
+| Repo con nombre distintivo y rama `main` | Común | Página del repo | `evidencias/01-repositorio/01-repositorio-nombre-y-main.png` | Juan | Nombre `PonderixOficial`, rama por defecto `main` | ☐ |
 | Acceso del docente `oalarconpe` | Común | Settings → Collaborators | `evidencias/01-repositorio/02-colaboradores-oalarconpe.png` | Juan | `oalarconpe` aparece por usuario | ☐ |
 | Protección de `main` | Común | Regla con PR, aprobación y check de CI | `evidencias/01-repositorio/03-proteccion-main.png` | Juan | Regla activa | ☐ |
 | README completo | Común | `README.md` sin `[PENDIENTE` | `README.md` | Juan (todos sus secciones) | `git grep PENDIENTE` vacío | ☐ |
@@ -14,7 +14,7 @@ Rutas relativas al repositorio oficial `ponderix`. «Estado» se marca **solo** 
 | Revisiones | Común | Aprobaciones en cada PR | Pestaña *Conversation* de cada PR | Cada revisor | «approved these changes» | ☐ |
 | Ejecución local documentada | CI | README §7 | `README.md` | Juan | Seguir los pasos en un PC limpio | ☐ |
 | Pipeline CI en YAML | CI | Archivo + pipeline enlazada | `pipelines/azure-pipelines-ci.yml`, `evidencias/02-ci/04-pipeline-ci-yaml.png` | Jhon | Ruta del YAML en la pipeline `ponderix-ci` | ☐ |
-| Vinculación con GitHub | CI | Conexión | `evidencias/02-ci/03-conexion-github.png` | Jhon | Repo `ponderix` conectado | ☐ |
+| Vinculación con GitHub | CI | Conexión | `evidencias/02-ci/03-conexion-github.png` | Jhon | Repo `PonderixOficial` conectado | ☐ |
 | Trigger automático en `main` | CI | Ejecución con motivo automático y SHA de `main` | `evidencias/02-ci/05-disparador-automatico.png` | Jhon | Motivo ≠ *Manual*; SHA = commit de GitHub | ☐ |
 | Cambio controlado que dispara CI | CI | PR insignia + ejecución | Memoria §12 | Jhon | Ejecución inmediatamente posterior al merge | ☐ |
 | Restauración y compilación | CI | Log de etapas | `evidencias/02-ci/06-etapas-ci.png` | Jhon | Pasos restore/build en verde | ☐ |

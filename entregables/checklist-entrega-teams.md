@@ -5,7 +5,7 @@
 
 ## 1. Antes de entregar (comprobar en una ventana privada del navegador, sin sesión)
 
-- [ ] El repo `https://github.com/JuanSebastianEcheverriGallego/ponderix` abre y el README se ve completo.
+- [ ] El repo `https://github.com/JuanSebastianEcheverriGallego/PonderixOficial` abre y el README se ve completo.
 - [ ] `oalarconpe` figura en Settings → Collaborators (aceptado o invitación enviada; captura guardada).
 - [ ] `git grep PENDIENTE` en `main` no devuelve nada.
 - [ ] La URL pública abre y muestra la versión **1.1.0**.

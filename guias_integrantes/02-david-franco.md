@@ -11,7 +11,7 @@ Tus pruebas son lo que la CI ejecuta en la etapa **Validar**: si una prueba fall
 ## 0. Qué debes esperar antes de comenzar
 
 - [ ] Juan te confirmó «`main` lista para pruebas» (su PR está fusionado).
-- [ ] Aceptaste la invitación de colaborador al repo `ponderix` (revisa tu correo o <https://github.com/notifications>).
+- [ ] Aceptaste la invitación de colaborador al repo `PonderixOficial` (revisa tu correo o <https://github.com/notifications>).
 - [ ] Git configurado con tu nombre y el correo de tu cuenta de GitHub:
   ```bash
   git config --global user.name "David Stiven Franco López"
@@ -24,8 +24,8 @@ Tus pruebas son lo que la CI ejecuta en la etapa **Validar**: si una prueba fall
 ### Revisar el PR de Juan (te toca antes de tu turno)
 
 ```bash
-git clone https://github.com/JuanSebastianEcheverriGallego/ponderix.git
-cd ponderix
+git clone https://github.com/JuanSebastianEcheverriGallego/PonderixOficial.git
+cd PonderixOficial
 git fetch origin
 git switch feature/juan-sebastian-base-aplicacion
 dotnet build Ponderix.slnx

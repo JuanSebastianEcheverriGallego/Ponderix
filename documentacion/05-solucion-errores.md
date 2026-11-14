@@ -26,7 +26,7 @@ Formato: **síntoma → causa probable → solución**. Si un error real ocurre,
 
 ### CI-02 · El repositorio no aparece al crear la pipeline
 - **Causa:** la GitHub App *Azure Pipelines* no está instalada en el repo, o la instaló alguien sin ser propietario.
-- **Solución:** Juan (propietario) → <https://github.com/apps/azure-pipelines> → Configure → *Only select repositories* → `ponderix` → elegir organización/proyecto `Ponderix`.
+- **Solución:** Juan (propietario) → <https://github.com/apps/azure-pipelines> → Configure → *Only select repositories* → `PonderixOficial` → elegir organización/proyecto `Ponderix`.
 
 ### CI-03 · El merge en `main` no lanza la CI
 - **Causas:** (1) en *Edit → ⋯ → Triggers* alguien marcó «Override the YAML continuous integration trigger»; (2) el YAML aún no está en `main`; (3) la ruta del YAML en la pipeline no es `/pipelines/azure-pipelines-ci.yml`; (4) el webhook de GitHub falló.

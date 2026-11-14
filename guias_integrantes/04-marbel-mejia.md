@@ -136,7 +136,7 @@ git push -u origin feature/marbel-pipeline-cd
 
 ## 5. Crear la pipeline `ponderix-cd` y primer despliegue
 
-1. **Pipelines → New pipeline → GitHub → `ponderix` → Existing Azure Pipelines YAML file** → **Branch:** `main` → **Path:** `/pipelines/azure-pipelines-cd.yml` → **Continue** → flecha junto a Run → **Save**.
+1. **Pipelines → New pipeline → GitHub → `PonderixOficial` → Existing Azure Pipelines YAML file** → **Branch:** `main` → **Path:** `/pipelines/azure-pipelines-cd.yml` → **Continue** → flecha junto a Run → **Save**.
 2. **⋯ → Rename/move** → **`ponderix-cd`**.
 3. **Primera ejecución (de autorización):** la ejecución de CI generada por tu merge terminó *antes* de que existiera `ponderix-cd`, así que esta vez se lanza a mano: **Run pipeline → Resources → ci →** elige la última ejecución de `ponderix-ci` en `main` → **Run**.
 4. Aparecerá «This pipeline needs permission to access 2 resources» → **View → Permit** (Service Connection y entorno). Es la autorización explícita de seguridad.

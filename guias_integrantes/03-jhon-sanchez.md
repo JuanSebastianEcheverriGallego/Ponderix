@@ -73,7 +73,7 @@ git push -u origin feature/jhon-pipeline-ci
 2. **Where is your code?** → **GitHub** (YAML).
 3. Autoriza Azure Pipelines con tu cuenta de GitHub si lo pide.
 4. **Select a repository** → `JuanSebastianEcheverriGallego/ponderix`.
-   - Si aparece **«Install the Azure Pipelines app»** o no ves el repo: es necesario que **Juan** (propietario) instale la app (guía de Juan, sección 9a), seleccionando solo el repo `ponderix` y la organización/proyecto `Ponderix`. Después vuelve a este paso.
+   - Si aparece **«Install the Azure Pipelines app»** o no ves el repo: es necesario que **Juan** (propietario) instale la app (guía de Juan, sección 9a), seleccionando solo el repo `PonderixOficial` y la organización/proyecto `Ponderix`. Después vuelve a este paso.
 5. **Configure your pipeline** → **Existing Azure Pipelines YAML file** → **Branch:** `feature/jhon-pipeline-ci` → **Path:** `/pipelines/azure-pipelines-ci.yml` → **Continue**.
 6. En la vista previa, abre la flecha junto a **Run** → **Save** (no la ejecutes manualmente: la primera ejecución debe ser automática).
 7. **Pipelines** → menú **⋯** de la pipeline recién creada → **Rename/move** → nombre **`ponderix-ci`** → **Save**.

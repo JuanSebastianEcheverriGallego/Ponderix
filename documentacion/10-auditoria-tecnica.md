@@ -46,7 +46,7 @@ Revisión realizada el 13-nov-2026 sobre el contenido de este repositorio de res
 
 Nada de lo siguiente se ha ejecutado, porque requiere las cuentas del equipo:
 
-1. Creación del repositorio `ponderix`, colaboradores (incluido `oalarconpe`) y protección de `main`.
+1. Creación del repositorio `PonderixOficial`, colaboradores (incluido `oalarconpe`) y protección de `main`.
 2. Organización/proyecto de Azure DevOps, paralelismo, GitHub App, pipelines `ponderix-ci` y `ponderix-cd`.
 3. Primera ejecución real de ambas pipelines en agentes de Microsoft (las tareas `UseDotNet@2`, `PublishTestResults@2`, `PublishCodeCoverageResults@2`, `ArchiveFiles@2`, `PublishPipelineArtifact@1` y `AzureWebApp@1` solo se validan de verdad ahí).
 4. App Service, Service Connection, entorno y autorizaciones.

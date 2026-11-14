@@ -8,7 +8,7 @@ Capturas **reales** tomadas de GitHub, Azure DevOps y Azure. Formato PNG, legibl
 
 | Archivo | Qué debe mostrar | Responsable |
 |---|---|---|
-| `01-repositorio-nombre-y-main.png` | Página principal del repo: nombre `ponderix`, rama `main`, README | Juan Sebastián |
+| `01-repositorio-nombre-y-main.png` | Página principal del repo: nombre `PonderixOficial`, rama `main`, README | Juan Sebastián |
 | `02-colaboradores-oalarconpe.png` | Settings → Collaborators con `oalarconpe` (estado aceptado o invitación pendiente) | Juan Sebastián |
 | `03-proteccion-main.png` | Regla de protección de `main` (PR obligatorio, 1 aprobación, check de CI) | Juan Sebastián |
 | `04-historial-commits.png` | `Commits` de `main` con mensajes descriptivos y varios autores | Marlon |

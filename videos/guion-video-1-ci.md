@@ -15,7 +15,7 @@
 
 ## Bloque 1 · Presentación y repositorio — *Juan Sebastián* (≈ 2 min)
 
-**Pantalla:** GitHub → repo `ponderix`.
+**Pantalla:** GitHub → repo `PonderixOficial`.
 
 > «Hola, somos el equipo **Ponderix**. Soy **Juan Sebastián Echeverri Gallego** y fui responsable de la gestión de GitHub, la aplicación base y la documentación.
 > Ponderix es una API y página web en .NET 10 que calcula notas ponderadas con los niveles de la rúbrica. El objetivo de la práctica es que cada cambio en `main` se valide, se empaquete y se despliegue solo en Azure.»

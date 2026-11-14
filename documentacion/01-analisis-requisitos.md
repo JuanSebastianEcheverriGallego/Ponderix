@@ -55,7 +55,7 @@ La frase clave del PDF es: *«El evaluador debe poder verificar la relación ent
 
 | Tema | PDF | Teams | Consecuencia |
 |---|---|---|---|
-| Nombres prohibidos | «practica-final» | «PracticaFinal», «ProyectoCI-CD» | Se elige `ponderix` |
+| Nombres prohibidos | «practica-final» | «PracticaFinal», «ProyectoCI-CD» | Se elige `PonderixOficial` |
 | Participación | Responsabilidad concreta + evidencia | «todos deben participar **activamente** en configuración, implementación, documentación y demostración» | Cada integrante hace PR técnicos **y** documentales y aparece en ambos videos |
 | Video CI | Demostración de CI | Explícitamente «incluyendo la **compilación y generación de artefactos**» | El guion dedica bloques a etapas y artefacto |
 | PDF | Memoria técnica | «Documento PDF de **evidencias técnicas**: explicación, capturas, configuraciones, inconvenientes y soluciones» | La memoria se centra en capturas reales comentadas |

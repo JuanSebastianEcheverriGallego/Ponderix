@@ -41,18 +41,18 @@ Todo el contenido de `paquetes/01-juan-sebastian/` (incluye archivos ocultos `.g
 ## 2. Crear el repositorio en GitHub
 
 1. GitHub → **+ → New repository**.
-2. **Owner:** tu usuario. **Repository name:** `ponderix`.
+2. **Owner:** tu usuario. **Repository name:** `PonderixOficial`.
 3. **Description:** `Calculadora de notas ponderadas · CI/CD con Azure DevOps y Azure App Service`.
 4. **Visibility:** **Public** (recomendado: protección de ramas, *secret scanning* y lectura de evidencias gratis). Si el equipo prefiere *Private*, la protección de ramas exige GitHub Pro (gratis con el GitHub Student Developer Pack).
 5. **NO** marques «Add a README», «.gitignore» ni licencia (el repo debe nacer vacío).
-6. **Create repository**. Copia la URL: `https://github.com/JuanSebastianEcheverriGallego/ponderix.git`.
+6. **Create repository**. Copia la URL: `https://github.com/JuanSebastianEcheverriGallego/PonderixOficial.git`.
 
 ## 3. Primer commit en `main` (el único que se sube directo)
 
 ```bash
 # 1. Crear la carpeta de trabajo y entrar en ella
-mkdir ponderix
-cd ponderix
+mkdir PonderixOficial
+cd PonderixOficial
 
 # 2. Inicializar Git con la rama principal llamada main
 git init -b main
@@ -68,7 +68,7 @@ echo "# Ponderix" > README.md
 # 5. Confirmar y subir
 git add .gitignore .gitattributes README.md
 git commit -m "chore: inicializar repositorio con .gitignore y .gitattributes"
-git remote add origin https://github.com/JuanSebastianEcheverriGallego/ponderix.git
+git remote add origin https://github.com/JuanSebastianEcheverriGallego/PonderixOficial.git
 git push -u origin main
 ```
 
@@ -185,7 +185,7 @@ git pull origin main       # tu main local ya incluye el merge
 ## 9. Tareas administrativas que te pedirá Jhon
 
 **a) Autorizar Azure Pipelines en el repo** (cuando Jhon cree la pipeline):
-Jhon te enviará una solicitud o te pedirá unirte a una llamada corta. Ve a <https://github.com/apps/azure-pipelines> → **Configure** → tu cuenta → **Only select repositories → `ponderix`** → **Save/Install** → en la pantalla de Azure DevOps elige la organización y el proyecto `Ponderix` que creó Jhon (debes ser miembro del proyecto).
+Jhon te enviará una solicitud o te pedirá unirte a una llamada corta. Ve a <https://github.com/apps/azure-pipelines> → **Configure** → tu cuenta → **Only select repositories → `PonderixOficial`** → **Save/Install** → en la pantalla de Azure DevOps elige la organización y el proyecto `Ponderix` que creó Jhon (debes ser miembro del proyecto).
 
 **b) Hacer obligatoria la CI en `main`** (después del primer PR validado por la CI):
 Settings → Rules/Branches → `proteccion-main` → **Require status checks to pass** → buscar el check que te indique Jhon (p. ej. `ponderix-ci`) → **Save**.
@@ -194,7 +194,7 @@ Settings → Rules/Branches → `proteccion-main` → **Require status checks to
 
 ## 10. No continúes hasta comprobar lo siguiente
 
-- [ ] El repo se llama `ponderix` (no `practica-final` ni similares) y la rama por defecto es `main`.
+- [ ] El repo se llama `PonderixOficial` (no `practica-final` ni similares) y la rama por defecto es `main`.
 - [ ] `oalarconpe` aparece en Collaborators (aceptado o invitación pendiente) y los 4 integrantes aceptaron.
 - [ ] `main` está protegida (PR + 1 aprobación, sin force push).
 - [ ] El PR está **fusionado** con merge commit y `main` compila (`dotnet build Ponderix.slnx`).
@@ -205,7 +205,7 @@ Settings → Rules/Branches → `proteccion-main` → **Require status checks to
 
 | Entregable | A quién | Cómo |
 |---|---|---|
-| URL del repo `https://github.com/JuanSebastianEcheverriGallego/ponderix` | Todo el equipo | Chat del equipo |
+| URL del repo `https://github.com/JuanSebastianEcheverriGallego/PonderixOficial` | Todo el equipo | Chat del equipo |
 | Enlace al PR fusionado | David y Marlon (evidencias) | Chat |
 | Confirmación «`main` lista para pruebas» | **David** (siguiente) | Chat |
 | Capturas 01, 02 y 03 de `evidencias/01-repositorio/` | Marlon | Carpeta compartida o PR de evidencias |
@@ -213,7 +213,7 @@ Settings → Rules/Branches → `proteccion-main` → **Require status checks to
 
 ## 12. Qué explicas en los videos
 
-- **Video 1 (CI):** «Soy Juan Sebastián Echeverri Gallego, responsable de GitHub y documentación». Muestra el repo `ponderix`, la rama `main`, la regla de protección, los colaboradores (incluido `oalarconpe`), el historial de commits/PR y el README. Explica por qué se trabaja con ramas + PR y merge commit (trazabilidad por autor).
+- **Video 1 (CI):** «Soy Juan Sebastián Echeverri Gallego, responsable de GitHub y documentación». Muestra el repo `PonderixOficial`, la rama `main`, la regla de protección, los colaboradores (incluido `oalarconpe`), el historial de commits/PR y el README. Explica por qué se trabaja con ramas + PR y merge commit (trazabilidad por autor).
 - **Video 2 (CD):** muestra el PR del cambio visible v1.1.0 de Marlon y su commit de fusión en `main` (el inicio de la cadena), y la sección de trazabilidad del README.
 
 ## 13. Problemas frecuentes
